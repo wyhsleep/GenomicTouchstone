@@ -1,0 +1,28 @@
+# @package _global_
+defaults:
+  - /trainer: default
+  - /loader: default
+  - /dataset: multilabel_classification
+  - /task: multilabel_classification
+  - /optimizer: adamw
+  - /scheduler: plateau
+  - /callbacks: [base, checkpoint]
+
+task:
+  loss:
+    _name_: binary_cross_entropy
+  metrics:
+    - ${dataset.metric}
+
+train:
+  # monitor: val/${dataset.metric}
+  # mode: max
+  monitor: val/loss
+  mode: min
+
+encoder: id
+
+# we need this for classification!
+decoder:
+  _name_: sequence
+  mode: pool_masked # modified vertion of pooling embbedings for downstream tasks

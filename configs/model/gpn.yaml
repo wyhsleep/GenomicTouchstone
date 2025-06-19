@@ -1,0 +1,6 @@
+_name_: gpn
+config:
+  _target_: src.models.othermodels.configuration_custom.Custom_Config
+  d_model: 512 # need to change based on the model size
+  model_name: gpn
+  pretrained_model_path: ${train.pretrained_model_path}

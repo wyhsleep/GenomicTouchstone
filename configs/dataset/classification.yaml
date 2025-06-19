@@ -1,0 +1,240 @@
+_name_: generaldataset  # this links to the overall SequenceDataset of all nucleotide transformer datasets
+train_val_split_seed: ${train.seed}  # Used for train/validation splitting
+dataset_name: enhancers  # this specifies which dataset in nuc trx
+dest_path: null  # path to overall nuc trx datasets
+max_length: ${.${.dataset_name}.max_length}
+d_output: ${.${.dataset_name}.classes} 
+use_padding: True
+padding_side: left
+add_eos: False
+batch_size: 256
+train_len: ${.${.dataset_name}.train_len}
+__l_max: ${.max_length}
+shuffle: true  # set this as default!
+metric: ${.${.dataset_name}.metric}
+# these are used to find the right attributes automatically for each dataset
+
+# dummy_mouse_enhancers_ensembl:
+#   train_len: 1210
+#   classes: 2
+#   max_length: 1024
+#   metric:    
+#   - accuracy 
+#   # - roc_auc_macro
+#   - f1_binary
+#   - mcc
+
+core_promoter_annotation:
+  train_len: 34736
+  max_length: 70
+  classes: 4
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+splice_sites_donor:
+  train_len: 80000
+  max_length: 512
+  classes: 2
+  metric:
+    - accuracy
+    - f1_binary
+    - mcc
+
+splice_sites_acceptor:
+  train_len: 80000
+  max_length: 512
+  classes: 2
+  metric:
+    - accuracy
+    - f1_binary
+    - mcc
+
+enhancers_types:
+  train_len: 27000
+  max_length: 400
+  classes: 3
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+regulation:
+  train_len: 125336
+  max_length: 1024
+  classes: 4
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_128:
+  train_len: 40000
+  max_length: 128
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_256:
+  train_len: 40000
+  max_length: 256
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+
+species_classification_512:
+  train_len: 40000
+  max_length: 512
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_1024:
+  train_len: 40000
+  max_length: 1024
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_2048:
+  train_len: 40000
+  max_length: 2048
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_4096:
+  train_len: 40000
+  max_length: 4096
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_8192:
+  train_len: 40000
+  max_length: 8192
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_16384:
+  train_len: 40000
+  max_length: 16384
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_32768:
+  train_len: 40000
+  max_length: 32768
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_65536:
+  train_len: 40000
+  max_length: 65536
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+species_classification_131072:
+  train_len: 40000
+  max_length: 131072
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+
+
+
+# rna classification
+
+NoncodingRNAFamily:
+  train_len: 5670
+  max_length: 1136
+  classes: 13
+  metric:    
+    - accuracy 
+    - f1_macro
+    - mcc
+
+## protein classification
+
+transmembrane:  # Transmembrane protein classification
+  train_len: 1941  # Total samples (1241 + 311 + 389)
+  max_length: 2160  # Based on sequence length analysis (max: 2160)
+  classes: 6
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+domain:  # Protein domain classification
+  train_len: 549  # Total samples (351 + 88 + 110)
+  max_length: 2160  # Based on sequence length analysis (max: 2160)
+  classes: 4
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+enzyme:  # Enzyme classification
+  train_len: 1130  # Total samples (723 + 181 + 226)
+  max_length: 2160  # Based on sequence length analysis (max: 2160)
+  classes: 4
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+ptm:  # Post-translational modification classification
+  train_len: 4118  # Total samples (2635 + 659 + 824)
+  max_length: 2160  # Based on sequence length analysis (max: 2160)
+  classes: 3  # Main PTM types
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+structure:  # Secondary structure classification
+  train_len: 2106  # Total samples (1347 + 337 + 422)
+  max_length: 2160  # Based on sequence length analysis (max: 2160)
+  classes: 3  # Structure types
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc
+
+variant:  # Variant classification
+  train_len: 3976  # Total samples (2544 + 636 + 796)
+  max_length: 2160  # Based on sequence length analysis (max: 2160)
+  classes: 2 
+  metric:
+    - accuracy
+    - f1_macro
+    - mcc

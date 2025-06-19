@@ -1,0 +1,69 @@
+_name_: paireddataset  # this links to the overall SequenceDataset of all nucleotide transformer datasets
+train_val_split_seed: ${train.seed}  # Used for train/validation splitting
+dataset_name: enhancers  # this specifies which dataset in nuc trx
+dest_path: null  # path to overall nuc trx datasets
+max_length: ${.${.dataset_name}.max_length}
+d_output: ${.${.dataset_name}.classes} 
+use_padding: True
+padding_side: left
+add_eos: False
+batch_size: 256
+train_len: ${.${.dataset_name}.train_len}
+__l_max: ${.max_length}
+shuffle: true  # set this as default!
+metric: ${.${.dataset_name}.metric}
+# these are used to find the right attributes automatically for each dataset
+
+Enhancer_Promoter_Interaction_IMR90:
+    train_len: 10000
+    max_length: 3000
+    classes: 2
+    metric:
+        - accuracy
+        - f1_macro
+        - mcc
+
+Enhancer_Promoter_Interaction_K562:
+    train_len: 10000
+    max_length: 3000
+    classes: 2
+    metric:
+        - accuracy
+        - f1_macro
+        - mcc
+Enhancer_Promoter_Interaction_GM12878:
+    train_len: 10000
+    max_length: 3000
+    classes: 2
+    metric:
+        - accuracy
+        - f1_macro
+        - mcc
+
+Enhancer_Promoter_Interaction_HeLa-S3:
+    train_len: 10000
+    max_length: 3000
+    classes: 2
+    metric:
+        - accuracy
+        - f1_macro
+        - mcc
+
+Enhancer_Promoter_Interaction_HUVEC:
+    train_len: 10000
+    max_length: 3000
+    classes: 2
+    metric:
+        - accuracy
+        - f1_macro
+        - mcc
+
+Enhancer_Promoter_Interaction_NHEK:
+    train_len: 10000
+    max_length: 3000
+    classes: 2
+    metric:
+        - accuracy
+        - f1_macro
+        - mcc
+

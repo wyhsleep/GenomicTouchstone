@@ -1,0 +1,6 @@
+_name_: rnaernie
+config:
+  _target_: src.models.othermodels.configuration_custom.Custom_Config
+  d_model: 768
+  model_name: rnaernie
+  pretrained_model_path: ${train.pretrained_model_path}

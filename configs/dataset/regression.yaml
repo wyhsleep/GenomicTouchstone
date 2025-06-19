@@ -1,0 +1,564 @@
+_name_: generaldataset  # this links to the overall SequenceDataset of all nucleotide transformer datasets
+train_val_split_seed: ${train.seed}  # Used for train/validation splitting
+dataset_name: enhancers  # this specifies which dataset in nuc trx
+dest_path: null  # path to overall nuc trx datasets
+max_length: ${.${.dataset_name}.max_length}
+d_output: ${.${.dataset_name}.classes} 
+use_padding: True
+padding_side: left
+add_eos: False
+batch_size: 256
+train_len: ${.${.dataset_name}.train_len}
+__l_max: ${.max_length}
+shuffle: true  # set this as default!
+metric: ${.${.dataset_name}.metric}
+# these are used to find the right attributes automatically for each dataset
+
+# protein regression
+
+fluorescence:
+  train_len: 21464
+  max_length: 714
+  classes: 1
+  metric: 
+    - r2
+    - mse
+    - spearman
+melting_point:
+  train_len: 9432
+  max_length: 3066
+  classes: 1
+  metric: 
+    - r2
+    - mse
+    - spearman
+    
+stability:
+  train_len: 53700
+  max_length: 150
+  classes: 1
+  metric: 
+    - r2
+    - mse
+    - spearman
+
+beta_lactamase_complete:
+  train_len: 9202
+  max_length: 858
+  classes: 1
+  metric: 
+    - r2
+    - mse
+    - spearman
+
+beta_lactamase_unique:
+  train_len: 3457
+  max_length: 858
+  classes: 1
+  metric: 
+    - r2
+    - mse
+    - spearman
+
+
+# rna regression
+Isoform:
+  train_len: 145463
+  max_length: 186
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+MeanRibosomeLoading:
+  train_len: 76319
+  max_length: 100
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+MeanRibosomeLoading_Human:
+  train_len: 6080
+  max_length: 100
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+ProgrammableRNASwitches:
+  train_len: 73227
+  max_length: 148
+  classes: 3
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+CoV_Vaccine_Degradation:
+  train_len: 1600
+  max_length: 81
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+mRFP_Expression:
+  train_len: 1021
+  max_length: 678
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+mRNA_Stability:
+  train_len: 45749
+  max_length: 3066
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+Tc-Riboswitches:
+  train_len: 248
+  max_length: 75
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+HEK_EL:
+  train_len: 12969
+  max_length: 100
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+HEK_TE:
+  train_len: 12969
+  max_length: 100
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+Muscle_EL:
+  train_len: 1131
+  max_length: 100
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+Muscle_TE:
+  train_len: 1131
+  max_length: 100
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+pc3_EL:
+  train_len: 11321
+  max_length: 100
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+    
+pc3_TE:
+  train_len: 11321
+  max_length: 100
+  classes: 1
+  task: regression
+  metric:
+    - mse
+    - r2
+    - spearman
+
+PA_athaliana: 
+  train_len: 8703
+  max_length: 3288 
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+PA_dmelanogaster: 
+  train_len: 7854
+  max_length: 4209 
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+PA_ecoli: 
+  train_len: 2756
+  max_length: 2103 
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+PA_hsapiens: 
+  train_len: 8959
+  max_length: 4179
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+PA_scerevisiae: 
+  train_len: 3751
+  max_length: 3483 
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+TA_athaliana: 
+  train_len: 9625
+  max_length: 3090
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+TA_dmelanogaster: 
+  train_len: 7474
+  max_length: 4461
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+TA_ecoli: 
+  train_len: 2680
+  max_length: 2136
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+TA_hsapiens: 
+  train_len: 4168
+  max_length: 4290
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+TA_hvolcanii: 
+  train_len: 2424
+  max_length: 1977
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+TA_ppastoris: 
+  train_len: 3557
+  max_length: 3342
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+TA_scerevisiae: 
+  train_len: 4141
+  max_length: 3510
+  classes: 1
+  metric:
+    - r2 
+    - mse 
+    - spearman 
+
+
+bulk_rna_expression_128:
+  train_len: 20544
+  max_length: 128
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+  
+bulk_rna_expression_256:
+  train_len: 20544
+  max_length: 256
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+bulk_rna_expression_512:
+  train_len: 20544
+  max_length: 512
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+  
+bulk_rna_expression_1024:
+  train_len: 20544
+  max_length: 1024
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+  
+bulk_rna_expression_2048:
+  train_len: 20544
+  max_length: 2048
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+bulk_rna_expression_4096:
+  train_len: 20544
+  max_length: 4096
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+bulk_rna_expression_8192:
+  train_len: 20544
+  max_length: 8192
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+bulk_rna_expression_16384:
+  train_len: 20544
+  max_length: 16384
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+bulk_rna_expression_32768:
+  train_len: 20544
+  max_length: 32768
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+  
+bulk_rna_expression_65536:
+  train_len: 20544
+  max_length: 65536
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+bulk_rna_expression_131072:
+  train_len: 20544
+  max_length: 131072
+  classes: 218
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+# DNA Quantitative Prediction of  Regulatory Activity
+GM12878:
+  train_len: 98996
+  max_length: 2114
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+H1ESC:
+  train_len: 133947
+  max_length: 211beta_lactamase_unique4
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+HEPG2:
+  train_len: 129733
+  max_length: 2114
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+IMR90:
+  train_len: 136706
+  max_length: 2114
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+
+K562:
+  train_len: 141691
+  max_length: 2114
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+    
+enhancer_activity_HCT116_Parental:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_p300CBP:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_MLL4:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_Med14:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_CDK9:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_CDK8:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_DeepSTARR_HCT116:
+  train_len: 21533
+  max_length: 249
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_CDK7:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_Brd4:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman
+enhancer_activity_HCT116_Brd2:
+  train_len: 6249
+  max_length: 1199
+  classes: 1
+  task: regression
+  metric: 
+    - mse
+    - r2
+    - spearman

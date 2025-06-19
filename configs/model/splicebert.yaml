@@ -1,0 +1,6 @@
+_name_: splicebert
+config:
+  _target_: src.models.othermodels.configuration_custom.Custom_Config
+  d_model: 512
+  model_name: splicebert
+  pretrained_model_path: ${train.pretrained_model_path}

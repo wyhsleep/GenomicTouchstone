@@ -1,0 +1,72 @@
+_name_: generaldataset  # this links to the overall SequenceDataset of all nucleotide transformer datasets
+train_val_split_seed: ${train.seed}  # Used for train/validation splitting
+dataset_name: enhancers  # this specifies which dataset in nuc trx
+dest_path: null  # path to overall nuc trx datasets
+max_length: ${.${.dataset_name}.max_length}
+d_output: ${.${.dataset_name}.classes} 
+use_padding: True
+padding_side: left
+add_eos: False
+batch_size: 256
+train_len: ${.${.dataset_name}.train_len}
+__l_max: ${.max_length}
+shuffle: true  # set this as default!
+metric: ${.${.dataset_name}.metric}
+# these are used to find the right attributes automatically for each dataset
+
+promoter_annotation:
+  train_len: 35508
+  max_length: 500
+  classes: 6
+  metric: 
+    - f1_macro_multilabel
+    - accuracy_multilabel
+    - roc_auc_macro_multilabel
+    # - mcc
+
+histone_annotation_1:
+  train_len: 96642
+  max_length: 1024
+  classes: 10
+  metric: 
+    - f1_macro_multilabel
+    - accuracy_multilabel
+    - roc_auc_macro_multilabel
+
+
+splice_sites_all:
+  train_len: 80000
+  max_length: 512
+  classes: 3
+  metric:
+    - f1_macro_multilabel
+    - accuracy_multilabel
+    - roc_auc_macro_multilabel
+
+regulation_multilabel:
+  train_len: 277660
+  max_length: 1024
+  classes: 4
+  metric:
+    - f1_macro_multilabel
+    - accuracy_multilabel
+    - roc_auc_macro_multilabel
+
+cpg_methylation:
+  train_len: 74309
+  max_length: 512
+  classes: 7
+  metric:
+    - f1_macro_multilabel
+    - accuracy_multilabel
+    - roc_auc_macro_multilabel
+
+# rna classification
+Modification:
+  train_len: 304661
+  max_length: 101
+  classes: 12
+  metric:    
+    - f1_macro_multilabel 
+    - accuracy_multilabel
+    - roc_auc_macro_multilabel

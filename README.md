@@ -16,7 +16,7 @@ conda env create -f Genomictouchstone.yml
 conda activate Genomictouchstone
 ```
 
-2. **Install additional dependencies (if needed):**
+2. **Install additional dependencies:**
 ```bash
 # For flash attention
 pip install flash-attn==2.5.6

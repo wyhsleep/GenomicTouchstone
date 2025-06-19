@@ -69,13 +69,13 @@ data_path="/your/path/to/data"
 
 We recommend to download the pretrained models from the official model zoo and put them in the `model_path` directory.
 
-For example, if you want to run the DNABERT2 model
+For example, if you want to run the nucleotide-transformer-2.5b-multi-species model
 
 ```bash
 cd /your/path/to/models
 # Make sure git-lfs is installed (https://git-lfs.com)
 git lfs install
-git clone https://huggingface.co/zhihan1996/DNABERT-2-117M
+git clone https://huggingface.co/InstaDeepAI/nucleotide-transformer-2.5b-multi-species
 ```
 
 #### 2. **Select Tasks to Run**

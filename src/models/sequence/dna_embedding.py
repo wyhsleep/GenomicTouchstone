@@ -6,10 +6,10 @@ Backbones from LM pre-training models, used for downstream tasks.
 from functools import partial
 from omegaconf import OmegaConf
 from transformers import AutoModel, AutoModelForMaskedLM, AutoModelForCausalLM, GPT2LMHeadModel, AutoConfig
-from peft import (
-    LoraConfig,
-    get_peft_model,
-)
+# from peft import (
+#     LoraConfig,
+#     get_peft_model,
+# )
 import torch
 import sys
 # require this to import the model from OmniBioTE dircetly torch.load

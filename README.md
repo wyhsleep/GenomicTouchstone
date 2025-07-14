@@ -32,26 +32,6 @@ Download the GenomicTouchstone datasets from [Hugging Face](https://huggingface.
 git clone https://huggingface.co/datasets/Wangyh/GenomicTouchstone_raw ./data/GenomicTouchstone_raw
 ```
 
-### Basic Usage
-
-#### 1. Single Model Training
-```bash
-python -m train experiment=genomictouchstone/classification \
-    dataset.dataset_name="core_promoter_annotation" \
-    model=dnabert \
-    train.pretrained_model_path="/path/to/pretrained/model" \
-    trainer.devices=1
-```
-
-#### 2. Batch Training with Scripts
-```bash
-# Navigate to classification scripts
-cd finetune/Genomictouchstone/classification/
-
-# Run comprehensive benchmarking
-bash classification.sh
-```
-
 ### 📝 Customizing Training Scripts
 
 The `classification.sh` script is highly configurable and supports comprehensive benchmarking across multiple models and tasks. 

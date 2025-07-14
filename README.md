@@ -121,7 +121,7 @@ run_model "$CONFIG_YOUR_MODEL" 0
 
 ## 📄 License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the CC-BY-NC-ND 4.0 - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 

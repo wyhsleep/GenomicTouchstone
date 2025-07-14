@@ -8,7 +8,7 @@ GenomicTouchstone is designed to benchmark and fine-tune state-of-the-art genomi
 
 ## 🚀 Quick Start
 
-### Environment Setup
+### Environment Setup (~3 mins)
 
 1. **Create conda environment:**
 ```bash
@@ -69,7 +69,7 @@ data_path="/your/path/to/data"
 
 We recommend to download the pretrained models from the official model zoo and put them in the `model_path` directory.
 
-For example, if you want to run the nucleotide-transformer-2.5b-multi-species model
+For example, if you want to run the nucleotide-transformer-2.5b-multi-species model (Training the nucleotide-transformer-2.5b-multi-species model for 10 epochs on a single H800 takes approximately several hours.)
 
 ```bash
 cd /your/path/to/models
@@ -117,7 +117,8 @@ RETURN_MASKs[$CONFIG_YOUR_MODEL]=true
 run_model "$CONFIG_YOUR_MODEL" 0
 ```
 
-
+### Final output
+The code will automatically create a folder at `/your/path/to/data/finetune/your_model` where all checkpoints can be found; result metrics will be stored on wandb.
 
 ## 📄 License
 
